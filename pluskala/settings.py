@@ -130,7 +130,8 @@ USE_THOUSAND_SEPARATOR = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    'pluskala/static', 
+    # 'pluskala/static',
+     BASE_DIR / 'pluskala' / 'static' 
 ] 
 
 # media file configuration
