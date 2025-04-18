@@ -25,7 +25,7 @@ SECRET_KEY = 'z9$efe!^w&1kc%1$&wvp3osv5ei=4!=!j1qu-8=h37(0guc@+i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pluskala.onrender.com' ]
 
 
 # Application definition
