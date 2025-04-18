@@ -1,0 +1,49 @@
+/* navbar */
+
+@font-face {
+    font-family: 'myFont';
+    src: url(../fonts/farsiFonts/BZar.ttf) /* IE6–8 */
+          /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+ 
+}
+
+.notify {
+    font-family: 'myFont' !important;
+}
+body{
+    font-family: 'myFont' !important;
+
+}
+
+.logo{
+    max-height: 75px !important;
+}
+
+.dropdown-toggle::after {
+    display: inline-block !important;
+    content: "" !important;
+    border-top: 0  !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+
+
+
+  }
+
+
+
+  .fa-caret-down{
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 0.2rem;
+  }
+
+  .fab{
+    font-size: 20px !important;
+    margin: 0 0.5rem;
+  }
+
+  .footer-bottom div p{
+    font-size: 1.2rem !important;
+  }

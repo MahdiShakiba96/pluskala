@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="section-intro padding-y-sm">
+
+	<div class="container">
+		<div class="intro-banner-wrap">
+			<img src="{% static 'images/banners/cover.jpg' %}" class="img-fluid rounded">
+		</div>
+	</div>
+</section>
+
+<section class="section-name padding-y-sm">
+	<div class="container">
+
+		<header class="section-heading d-flex flex-row-reverse justify-content-between">
+			<a href="{% url 'store' %}" class="btn btn-outline-primary float-right" style="font-size: 18px;"> مشاهده تمام محصولات </a>
+			<h3 class="section-title"> محصولات <span style="color:#3167eb">پلاس کالا</span>  </h3>
+		</header> 
+
+	
+		<div class="row" style="font-size: 23px;">
+			{% for product in products %}
+			<div class="col-md-3">
+				<div class="card card-product-grid">
+					<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
+					<figcaption class="info-wrap ">
+						<a href="{{ product.get_url }}" class="title text-right">{{product.product_name}}</a>
+						<br>
+						<div class="price mt-1">  {{ product.price }} تومان </div> 
+					</figcaption>
+				</div>
+			</div> 
+   			{% endfor %}
+		</div> 
+	</div>
+</section>
+{% endblock %}

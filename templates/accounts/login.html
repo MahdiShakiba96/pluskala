@@ -1,0 +1,44 @@
+{% extends 'base.html '%}
+
+{%  block content %}
+
+<section class="section-conten padding-y" style="min-height:84vh">
+
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+        {% if request.GET.command == 'verification' %}
+        <div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1024px; margin-top:100px;">
+            ایمیل فعال سازی  به آدرس ایمیل {{request.GET.email}} ارسال شد 
+            <br><br>
+            حساب خود را فعال کرده اید؟ <a href="{% url 'login' %}">وارد شوید</a>
+          </div>
+        {% else %}
+        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+          <div class="card-body">
+          <h4 class="card-title mb-4 mr-2 text-right">ورود به حساب کاربری</h4>
+        {% include  'includes/alerts.html' %}
+          <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+              <div class="form-group">
+                 <input type="email" class="form-control" placeholder="آدرس ایمیل" name="email" required >
+              </div> <!-- form-group// -->
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="رمز عبور" name="password" required>
+              </div> <!-- form-group// -->
+              
+              <div class="form-group">
+                  <a href="{% url 'forgotPassword' %}" class="float-right">فراموشی رمز؟</a> 
+               
+              </div> <!-- form-group form-check .// -->
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> ورود  </button>
+              </div> <!-- form-group// -->    
+          </form>
+          </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+         <p class="text-center mt-4">حساب کاربری ندارید؟<a href="{% url 'register' %}"> ثبت نام کنید</a></p>
+         <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+    {% endif %}
+    </section>
+
+{% endblock %}
