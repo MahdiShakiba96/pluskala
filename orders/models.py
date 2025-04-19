@@ -65,12 +65,12 @@ class OrderProduct(models.Model):
 
 
 
-    payment = models.ForeignKey(Payment ,  on_delete= models.SET_NULL ,blank=True , null=True)
-    ip = models.CharField(max_length=20 , blank=True)
-    STATUS = (
-        ('New' , 'New'),
-        ('Accepted', 'Accepted'),
-        ('Completed'  , 'Completed'),
-        ('Cancelled' , 'Cancelled'),
-    )
-    status = models.CharField(max_length=10 , choices=STATUS , default='New')
+    # payment = models.ForeignKey(Payment ,  on_delete= models.SET_NULL ,blank=True , null=True)
+    # ip = models.CharField(max_length=20 , blank=True)
+    # STATUS = (
+    #     ('New' , 'New'),
+    #     ('Accepted', 'Accepted'),
+    #     ('Completed'  , 'Completed'),
+    #     ('Cancelled' , 'Cancelled'),
+    # )
+    # status = models.CharField(max_length=10 , choices=STATUS , default='New')
